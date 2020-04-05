@@ -1,11 +1,11 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import pkg from './package.json';
-import external from 'rollup-plugin-peer-deps-external';
-import svgr from '@svgr/rollup';
+import typescript from 'rollup-plugin-typescript';
 import url from 'rollup-plugin-url';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import babel from 'rollup-plugin-babel';
+import svgr from '@svgr/rollup';
+import pkg from './package.json';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -19,6 +19,11 @@ export default {
     commonjs({
       include: 'node_modules/**'
     }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      lib: ['es5', 'es6', 'dom'],
+      target: 'es5',
+    }),
     babel({ extensions, include: ['src/**/*'], runtimeHelpers: true }),
     url(),
     svgr()
@@ -28,5 +33,8 @@ export default {
       file: pkg.module,
       format: 'es'
     }
+  ],
+  external: [
+    'styled-components'
   ]
 }

@@ -15,6 +15,7 @@
     "strict": true,
     "noImplicitReturns": true,
 
+    "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "dist/types"
   },
