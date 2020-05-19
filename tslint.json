@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-react-hooks"
+  ],
+  "rules": {
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "no-trailing-whitespace": true,
+    "jsx-no-multiline-js": false,
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "jsx-double"
+    ],
+    "jsx-boolean-value": [
+      true,
+      "never"
+    ],
+    "whitespace": [
+      true,
+      "check-separator",
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any"
+      }
+    ]
+  }
+}
