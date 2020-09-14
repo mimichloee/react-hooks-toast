@@ -31,6 +31,7 @@ function Toast ({ toast }: ToastProps) {
 
   const handleClick = useCallback(() => {
     setDisplay(false);
+    
     removeTimer = window.setTimeout(() => {
       removeToast(toast.id);
     }, 300);
